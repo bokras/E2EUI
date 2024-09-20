@@ -1,0 +1,97 @@
+<SignIn>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: '10dp'
+
+        Label:
+            id: header_label
+            text: 'SignIn:'
+        
+        Label:
+            text: "Login:"
+
+        TextInput:
+            id: login_input
+        
+        Label:
+            text:'Password:'
+
+        TextInput:
+            id: password_input
+        
+        Button:
+            id: submit_btn
+            text: "SignIn"
+            disabled: False
+            on_press: root.submit()
+
+
+<ItemsScreen>:
+    on_enter: root.enter()
+
+    BoxLayout:
+        id: screen_root
+        orientation: "vertical"
+
+        Label:
+            text:'Выбор товара:'
+            size_hint_y: .2
+        
+        ScrollView:
+
+            BoxLayout:
+                id: scroll
+                orientation: "vertical"
+                size_hint_y:None
+                spacing: "10dp"
+
+                Label:
+                    text:'Loading...'
+                    id: load_label
+
+
+<OrderData>:
+    
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text:'Order info:'
+
+        TextInput:
+            id: first
+            text: ''
+            hint_text: 'First Name:'
+        
+        TextInput:
+            id: last
+            text: ''
+            hint_text: 'Last Name:'
+
+        TextInput:
+            id: zip
+            text: ''
+            hint_text: 'ZipCode'
+
+        Button:
+            text: 'Create order'
+            on_press: root.submit()
+    
+
+<OrderStatus>:
+    on_enter: root.enter()
+
+    BoxLayout:
+        orientation:'vertical'
+
+
+        Label:
+            id: info
+            text:'Loading...'
+
+        Button:
+            id: back_btn
+            text: "Done"
+            disabled: True
+            on_press: root.back()
